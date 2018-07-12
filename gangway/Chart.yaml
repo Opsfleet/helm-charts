@@ -1,0 +1,16 @@
+name: gangway
+version: 0.1.0
+appVersion: 2.0.0
+description: Heptio Gangway
+keywords:
+- gangway
+- oidc
+- authentication
+- auth
+home: https://github.com/heptiolabs/gangway
+source:
+- https://github.com/heptiolabs/gangway
+maintainers:
+- name: leonidlm
+  email: leonid@opsfleet.com
+

@@ -1,0 +1,45 @@
+replicaCount: 1
+
+# Generate something per env with: `openssl rand -base64 32`
+sessionKey: set-manually 
+
+# Content of Gangway's configuration file
+config: |
+  host: 0.0.0.0
+
+image:
+  repository: gcr.io/heptio-images/gangway
+  tag: v2.0.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+    #kubernetes.io/ingress.class: nginx
+    #certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+  path: /
+  hosts: []
+  #- gangway.example.com
+  tls: []
+  #- secretName: gangway
+  #  hosts:
+  #  - gangway.example.com
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "512Mi"
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
