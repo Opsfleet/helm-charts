@@ -7,7 +7,7 @@ keywords:
 - oidc
 - authentication
 - auth
-home: https://github.com/heptiolabs/gangway
+home: https://github.com/opsfleet/helm-charts
 source:
 - https://github.com/heptiolabs/gangway
 maintainers:

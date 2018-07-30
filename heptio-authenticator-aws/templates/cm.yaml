@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "heptio-authenticator-aws.fullname" . }}
+  labels:
+    app: {{ template "heptio-authenticator-aws.name" . }}
+data:
+  config.yaml: |
+    clusterID: {{ .Values.clusterID }}
+    server:
+      mapRoles:
+      {{- with .Values.mapRoles }}
+{{ toYaml . | indent 8 }}
+      {{- end }}
+

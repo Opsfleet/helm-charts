@@ -1,0 +1,16 @@
+name: heptio-authenticator-aws
+version: 0.1.0
+appVersion: 0.3.0
+description: A Helm chart for Heptio's IAM authenticator
+keywords:
+- iam
+- authenticator
+- auth
+- aws
+home: https://github.com/opsfleet/helm-charts
+source:
+- https://github.com/kubernetes-sigs/aws-iam-authenticator
+maintainers:
+- name: leonidlm
+  email: leonid@opsfleet.com
+

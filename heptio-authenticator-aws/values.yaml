@@ -1,0 +1,29 @@
+image:
+  repository: gcr.io/heptio-images/authenticator
+  tag: v0.3.0
+
+resources:
+  requests:
+    memory: 20Mi
+    cpu: 10m
+  limits:
+    memory: 20Mi
+    cpu: 100m
+
+# run on each master node
+nodeSelector:
+  node-role.kubernetes.io/master: ""
+tolerations:
+- effect: NoSchedule
+  key: node-role.kubernetes.io/master
+- key: CriticalAddonsOnly
+  operator: Exists
+
+clusterID: ""
+
+mapRoles: {}
+#- roleARN: arn:aws:iam::000000000000:role/KubernetesAdmins
+#  username: dev:{{SessionName}}
+#  groups:
+#  - cluster-admin
+
